@@ -2,27 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
+use App\Models\Games;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class GameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $clients = Client::get();
-       // foreach($clients as $client)
-       //// {
-         //   dd($client->nome);
-       // }
+        $games = Games::get();
 
-       return view(
-        'clients.index',[
-            'clients'=> $clients
-        ]
-        );
+        return view(
+            'games.index',[
+                'games'=> $games
+            ]
+            );
     }
 
     /**
@@ -46,16 +42,14 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-
-        $client = Client::find($id);
+        $game = Games::find($id);
 
         return view(
-            'clients.show',[
-                'client'=> $client
+            'games.show',[
+                'game'=> $game
             ]
             );
     }
-
 
     /**
      * Show the form for editing the specified resource.

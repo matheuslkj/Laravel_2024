@@ -16,29 +16,19 @@
     </nav>
 
     <div class="container">
-        <h1>Lista de Clientes</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($clients as $client)
-                    <tr>
-                        <th>{{$client->id}}</th>
-                        <td>
-                            <a href="{{ route('clients.show', $client) }}">{{$client->nome}}</a>
-                        </td>
-                        <td>{{$client->endereco}}</td>
-                        <td></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="card" >
+            <div class="card-header" >
+                Dethales do Cliente {{$client->nome}}
+            </div>
+        </div>
+        <div class="card-body" >
+            <p><strong>ID: </strong> {{$client->id}} </p>
+            <p><strong>Nome: </strong> {{$client->nome}} </p>
+            <p><strong>Endereço: </strong> {{$client->endereco}} </p>
+            <p><strong>Observação: </strong> {{$client->observacao}} </p>
+            <br>
+            <a  class="btn btn-success" href="{{route('clients.index')}}">Voltar para a lista</a>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
