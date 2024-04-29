@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FlagsController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SiteController;
@@ -26,6 +27,7 @@ Route::get('/games', [GameController::class, 'index'])->name('games.index');
 Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
 Route::post('/clients', [ClientController::class, 'store']) -> name('clients.store');
 
+Route::get('/flags', [FlagsController::class, 'index'])->name('flags.index');
 
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/create', [ProductsController::class, 'create'])->name('products.create');

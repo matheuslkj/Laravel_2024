@@ -2,31 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Client;
 use App\Models\Flags;
 use Illuminate\Http\Request;
 
-class ClientController extends Controller
+class FlagsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $clients = Client::get();
-        $parametro = Flags::find(2);
-
-       // foreach($clients as $client)
-       //// {
-         //   dd($client->nome);
-       // }
+       $flags = Flags::get();
 
        return view(
-        'clients.index',[
-            'clients'=> $clients, 
-            'parametro'=> $parametro['valor']
-        ]
-        );
+           ' flags.index',[
+                'flags' => $flags
+           ]
+           );
     }
 
     /**
@@ -34,7 +26,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        //
     }
 
     /**
@@ -42,11 +34,7 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->except('_token');
-
-        Client::create($dados);
-
-        return redirect('/clients');
+        //
     }
 
     /**
@@ -54,16 +42,8 @@ class ClientController extends Controller
      */
     public function show(string $id)
     {
-
-        $client = Client::find($id);
-
-        return view(
-            'clients.show',[
-                'client'=> $client
-            ]
-            );
+        //
     }
-
 
     /**
      * Show the form for editing the specified resource.

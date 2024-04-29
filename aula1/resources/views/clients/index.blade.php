@@ -1,6 +1,8 @@
 @extends('app')
 @section('title', 'Lista de Clientes')
 @section('content')
+
+
 <h1>Lista de Clientes</h1>
         <table class="table">
             <thead>
@@ -24,8 +26,10 @@
                 @endforeach
             </tbody>
         </table>
-
+        
+        @if ($parametro == 1)
         <a class="btn btn-success" href="{{route('clients.create')}}">
             Cadastre aqui
         </a>
+        @endif
 @endsection
